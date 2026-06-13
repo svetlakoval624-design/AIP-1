@@ -1,62 +1,62 @@
-#Задание 10.1)
-from PIL import Image
+# #Задание 10.1)
+# from PIL import Image
+#
+# def crop_birthday_card(image_path, output_path="cardd.jpg"):
+#     try:
+#         img = Image.open(image_path)
+#         print(f"Оригинальный размер: {img.size}")
+#
+#         width, height = img.size
+#
+#         top = int(height * 0.30)
+#         bottom = int(height * 0.85)
+#         left = int(width * 0.05)
+#         right = int(width * 0.95)
+#
+#         cropped_img = img.crop((left, top, right, bottom))
+#         cropped_img.save(output_path)
+#         print(f"Обрезанный размер: {cropped_img.size}")
+#         print(f"Сохранено как: {output_path}")
+#         cropped_img.show()
+#
+#     except FileNotFoundError:
+#         print(f"Ошибка: Файл {image_path} не найден.")
+#     except Exception as e:
+#         print(f"Произошла ошибка: {e}")
+#
+# crop_birthday_card("birthday.jpg", "cardd.jpg")
 
-def crop_birthday_card(image_path, output_path="cardd.jpg"):
-    try:
-        img = Image.open(image_path)
-        print(f"Оригинальный размер: {img.size}")
-
-        width, height = img.size
-
-        top = int(height * 0.30)
-        bottom = int(height * 0.85)
-        left = int(width * 0.05)
-        right = int(width * 0.95)
-
-        cropped_img = img.crop((left, top, right, bottom))
-        cropped_img.save(output_path)
-        print(f"Обрезанный размер: {cropped_img.size}")
-        print(f"Сохранено как: {output_path}")
-        cropped_img.show()
-
-    except FileNotFoundError:
-        print(f"Ошибка: Файл {image_path} не найден.")
-    except Exception as e:
-        print(f"Произошла ошибка: {e}")
-
-crop_birthday_card("birthday.jpg", "cardd.jpg")
-
-#Задание 10.2)
-from PIL import Image
-import os
-
-#словарь праздников и файлов
-greeting_cards = {
-    "день рождения": "birthday.jpg",
-    "новый год": "new_year.jpg",
-    "8 марта": "8 march.jpg",
-    "1 мая": "1 may.jpg",
-    "9 мая":"9 may.jpg",
-    "свадьба": "wedding.jpg"
-}
-
-print("Доступные праздники:")
-for holiday in greeting_cards:
-    print(f"{holiday}")
-
-user_choice = input("К какому празднику нужна открытка:").lower().strip()
-
-if user_choice in greeting_cards:
-    filename = greeting_cards[user_choice]
-
-    if os.path.exists(filename):
-        img = Image.open(filename)
-        print(f"Открытка к празднику '{user_choice}':")
-        img.show()
-    else:
-        print(f"Файл '{filename}' не найден в папке с программой")
-else:
-    print(f"Праздника '{user_choice}' нет в списке")
+# #Задание 10.2)
+# from PIL import Image
+# import os
+#
+# #словарь праздников и файлов
+# greeting_cards = {
+#     "день рождения": "birthday.jpg",
+#     "новый год": "new_year.jpg",
+#     "8 марта": "8 march.jpg",
+#     "1 мая": "1 may.jpg",
+#     "9 мая":"9 may.jpg",
+#     "свадьба": "wedding.jpg"
+# }
+#
+# print("Доступные праздники:")
+# for holiday in greeting_cards:
+#     print(f"{holiday}")
+#
+# user_choice = input("К какому празднику нужна открытка:").lower().strip()
+#
+# if user_choice in greeting_cards:
+#     filename = greeting_cards[user_choice]
+#
+#     if os.path.exists(filename):
+#         img = Image.open(filename)
+#         print(f"Открытка к празднику '{user_choice}':")
+#         img.show()
+#     else:
+#         print(f"Файл '{filename}' не найден в папке с программой")
+# else:
+#     print(f"Праздника '{user_choice}' нет в списке")
 
 #Задание 10.3)
 from PIL import Image, ImageDraw, ImageFont

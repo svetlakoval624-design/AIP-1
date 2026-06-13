@@ -1,76 +1,76 @@
-# #Задание 9.1)
-# from PIL import Image
-#
-# def task_9_1(image_path):
-#     #открываем картинкку
-#     img = Image.open(image_path)
-#
-#     #получаем информацию
-#     width, height = img.size
-#     format_img = img.format
-#     mode = img.mode
-#
-#     #вывод картинки на экран
-#     img.show()
-#
-#     print(f"Размер: {width} x {height} пикселей")
-#     print(f"Формат: {format_img}")
-#     print(f"Цветовая модель: {mode}")
-#
-#
-#
-# task_9_1("cat.jpg")
-#
-# #Задание 9.2)
-# from PIL import Image
-#
-# def task_9_2(image_path):
-#     img = Image.open(image_path)
-#
-#     new_size = (img.width // 3, img.height // 3)
-#     img_resized = img.resize(new_size, Image.Resampling.LANCZOS)
-#     img_resized.save("small_image.jpg")
-#     print("Уменьшенное изображение сохранено как small_image.jpg")
-#
-#     img_mirror_horizontal = img.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
-#     img_mirror_horizontal.save("mirror_horizontal.jpg")
-#     print("Горизонтальное отражение сохранено как mirror_horizontal.jpg")
-#
-#     img_mirror_vertical = img.transpose(Image.Transpose.FLIP_TOP_BOTTOM)
-#     img_mirror_vertical.save("mirror_vertical.jpg")
-#     print("Вертикальное отражение сохранено как mirror_vertical.jpg")
-#
-# task_9_2("cat.jpg")
-#
-# #Задание 9.3)
-# from PIL import Image, ImageFilter
-# import os
-#
-# def task_9_3():
-#     #создание новой папки для обработанных картинок
-#     output_folder = "filtered_images"
-#     os.makedirs(output_folder, exist_ok=True)
-#
-#     #обработка 5 картинок
-#     for i in range(1, 6):
-#         input_filename = f"{i}.jpg"
-#         output_filename = f"emboss_{i}.jpg"
-#         output_path = os.path.join(output_folder, output_filename)
-#
-#         #Проверяем, существует ли файл
-#         if os.path.exists(input_filename):
-#             img = Image.open(input_filename)
-#
-#             #применяем фильтр "Тиснение" (3D эффект)
-#             img_filtered = img.filter(ImageFilter.EMBOSS)
-#
-#             #Сохраняем в новую папку
-#             img_filtered.save(output_path)
-#             print(f"Обработано: {input_filename} -> {output_path}")
-#         else:
-#             print(f"Файл {input_filename} не найден!")
-#
-# task_9_3()
+#Задание 9.1)
+from PIL import Image
+
+def task_9_1(image_path):
+    #открываем картинкку
+    img = Image.open(image_path)
+
+    #получаем информацию
+    width, height = img.size
+    format_img = img.format
+    mode = img.mode
+
+    #вывод картинки на экран
+    img.show()
+
+    print(f"Размер: {width} x {height} пикселей")
+    print(f"Формат: {format_img}")
+    print(f"Цветовая модель: {mode}")
+
+
+
+task_9_1("cat.jpg")
+
+#Задание 9.2)
+from PIL import Image
+
+def task_9_2(image_path):
+    img = Image.open(image_path)
+
+    new_size = (img.width // 3, img.height // 3)
+    img_resized = img.resize(new_size, Image.Resampling.LANCZOS)
+    img_resized.save("small_image.jpg")
+    print("Уменьшенное изображение сохранено как small_image.jpg")
+
+    img_mirror_horizontal = img.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+    img_mirror_horizontal.save("mirror_horizontal.jpg")
+    print("Горизонтальное отражение сохранено как mirror_horizontal.jpg")
+
+    img_mirror_vertical = img.transpose(Image.Transpose.FLIP_TOP_BOTTOM)
+    img_mirror_vertical.save("mirror_vertical.jpg")
+    print("Вертикальное отражение сохранено как mirror_vertical.jpg")
+
+task_9_2("cat.jpg")
+
+#Задание 9.3)
+from PIL import Image, ImageFilter
+import os
+
+def task_9_3():
+    #создание новой папки для обработанных картинок
+    output_folder = "filtered_images"
+    os.makedirs(output_folder, exist_ok=True)
+
+    #обработка 5 картинок
+    for i in range(1, 6):
+        input_filename = f"{i}.jpg"
+        output_filename = f"emboss_{i}.jpg"
+        output_path = os.path.join(output_folder, output_filename)
+
+        #Проверяем, существует ли файл
+        if os.path.exists(input_filename):
+            img = Image.open(input_filename)
+
+            #применяем фильтр "Тиснение" (3D эффект)
+            img_filtered = img.filter(ImageFilter.EMBOSS)
+
+            #Сохраняем в новую папку
+            img_filtered.save(output_path)
+            print(f"Обработано: {input_filename} -> {output_path}")
+        else:
+            print(f"Файл {input_filename} не найден!")
+
+task_9_3()
 
 #Задание 9.4)
 from PIL import Image, ImageDraw, ImageFont
