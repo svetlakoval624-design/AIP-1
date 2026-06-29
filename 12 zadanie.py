@@ -1,91 +1,91 @@
-#Задание 12.1)
-print("===Задание 12.1===")
-import json
+# #Задание 12.1)
+# print("===Задание 12.1===")
+# import json
+#
+# def task_12_1():
+#     with open('products.json', 'r', encoding='utf-8') as file:
+#         data = json.load(file)
+#
+#     for product in data['products']:
+#         print(f"Название: {product['name']}")
+#         print(f"Цена: {product['price']}")
+#         print(f"Вес: {product['weight']}")
+#
+#         if product['available']:
+#             print("В наличии")
+#         else:
+#             print("Нет в наличии!")
+#
+#         print()
+#
+#
+# task_12_1()
 
-def task_12_1():
-    with open('products.json', 'r', encoding='utf-8') as file:
-        data = json.load(file)
-
-    for product in data['products']:
-        print(f"Название: {product['name']}")
-        print(f"Цена: {product['price']}")
-        print(f"Вес: {product['weight']}")
-
-        if product['available']:
-            print("В наличии")
-        else:
-            print("Нет в наличии!")
-
-        print()
-
-
-task_12_1()
-
-#Задание 12.2)
-print("===Задание 12.2===")
-import json
-import os
-
-
-def task_12_2():
-    filename = 'products.json'
-
-    if not os.path.exists(filename) or os.path.getsize(filename) == 0:
-        initial_data = {
-            "products": [
-                {"name": "Шоколад", "price": 50, "available": True, "weight": 100},
-                {"name": "Кофе", "price": 100, "available": False, "weight": 250},
-                {"name": "Чай", "price": 70, "available": True, "weight": 50}
-            ]
-        }
-        with open(filename, 'w', encoding='utf-8') as file:
-            json.dump(initial_data, file, ensure_ascii=False, indent=2)
-
-#Запрашиваем у пользователя данные
-    print("Добавление нового продукта:")
-    name = input("Введите название продукта: ")
-    price = int(input("Введите цену: "))
-    weight = int(input("Введите вес: "))
-    available_input = input("В наличии (да/нет): ").lower()
-    available = True if available_input == 'да' else False
-
-
-    with open(filename, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-
-#Добавляем новый продукт
-    new_product = {
-        "name": name,
-        "price": price,
-        "available": available,
-        "weight": weight
-    }
-    data['products'].append(new_product)
-
-#Сохраняем обратно в файл
-    with open(filename, 'w', encoding='utf-8') as file:
-        json.dump(data, file, ensure_ascii=False, indent=2)
-
-    print("\nПродукт добавлен!\n")
-
-#Выводим все продукты
-    with open(filename, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-
-    for product in data['products']:
-        print(f"Название: {product['name']}")
-        print(f"Цена: {product['price']}")
-        print(f"Вес: {product['weight']}")
-
-        if product['available']:
-            print("В наличии")
-        else:
-            print("Нет в наличии!")
-
-        print()
-
-
-task_12_2()
+# #Задание 12.2)
+# print("===Задание 12.2===")
+# import json
+# import os
+#
+#
+# def task_12_2():
+#     filename = 'products.json'
+#
+#     if not os.path.exists(filename) or os.path.getsize(filename) == 0:
+#         initial_data = {
+#             "products": [
+#                 {"name": "Шоколад", "price": 50, "available": True, "weight": 100},
+#                 {"name": "Кофе", "price": 100, "available": False, "weight": 250},
+#                 {"name": "Чай", "price": 70, "available": True, "weight": 50}
+#             ]
+#         }
+#         with open(filename, 'w', encoding='utf-8') as file:
+#             json.dump(initial_data, file, ensure_ascii=False, indent=2)
+#
+# #Запрашиваем у пользователя данные
+#     print("Добавление нового продукта:")
+#     name = input("Введите название продукта: ")
+#     price = int(input("Введите цену: "))
+#     weight = int(input("Введите вес: "))
+#     available_input = input("В наличии (да/нет): ").lower()
+#     available = True if available_input == 'да' else False
+#
+#
+#     with open(filename, 'r', encoding='utf-8') as file:
+#         data = json.load(file)
+#
+# #Добавляем новый продукт
+#     new_product = {
+#         "name": name,
+#         "price": price,
+#         "available": available,
+#         "weight": weight
+#     }
+#     data['products'].append(new_product)
+#
+# #Сохраняем обратно в файл
+#     with open(filename, 'w', encoding='utf-8') as file:
+#         json.dump(data, file, ensure_ascii=False, indent=2)
+#
+#     print("\nПродукт добавлен!\n")
+#
+# #Выводим все продукты
+#     with open(filename, 'r', encoding='utf-8') as file:
+#         data = json.load(file)
+#
+#     for product in data['products']:
+#         print(f"Название: {product['name']}")
+#         print(f"Цена: {product['price']}")
+#         print(f"Вес: {product['weight']}")
+#
+#         if product['available']:
+#             print("В наличии")
+#         else:
+#             print("Нет в наличии!")
+#
+#         print()
+#
+#
+# task_12_2()
 
 #Задание 12.3)
 print("===Задание 12.3===")

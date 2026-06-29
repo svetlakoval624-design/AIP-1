@@ -23,6 +23,12 @@
       "price": 50,
       "available": true,
       "weight": 100
+    },
+    {
+      "name": "Мороженое",
+      "price": 50,
+      "available": true,
+      "weight": 100
     }
   ]
 }
